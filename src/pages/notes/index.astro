@@ -1,0 +1,51 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const isProd = import.meta.env.PROD;
+
+const notes = (await getCollection("notes", ({ data }) => isProd ? !data.draft : true))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const fmt = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+});
+---
+
+<Base
+  title="Notes"
+  description="Short writing on mobile architecture, mDL and verifiable credentials, framework migrations, and the long-running work behind a state app."
+>
+  <section class="wrap hero">
+    <span class="eyebrow">Notes</span>
+    <h1>Notes</h1>
+    <p class="lede" style="margin-top: 1.25rem;">
+      Short writing on mobile architecture, mDL and verifiable credentials, framework migrations,
+      and the long-running work behind a state app.
+    </p>
+  </section>
+
+  <section class="wrap section">
+    {
+      notes.length === 0 ? (
+        <div class="empty-state">No posts yet. Soon.</div>
+      ) : (
+        <ul class="notes-list">
+          {notes.map((n) => (
+            <li class="note-card">
+              <a href={`/notes/${n.id}/`}>
+                <span class="note-card__date">{fmt.format(n.data.date)}</span>
+                <span class="note-card__title">{n.data.title}</span>
+                {n.data.summary && (
+                  <span class="note-card__summary">{n.data.summary}</span>
+                )}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </section>
+</Base>

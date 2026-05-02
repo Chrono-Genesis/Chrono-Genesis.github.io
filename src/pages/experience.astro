@@ -1,0 +1,79 @@
+---
+import Base from "../layouts/Base.astro";
+
+const roles = [
+  {
+    when: "Jun 2020 – present",
+    title: "Principal Developer",
+    org: "State of Colorado · Office of Information Technology",
+    desc: "Lead mobile architecture for myColorado across iOS (Swift, SwiftUI, UIKit) and Android (Kotlin, Jetpack Compose, XML). Cover both platform leads, mentor the iOS and Android devs, and set technical direction for the 3-developer mobile team supported by 3 QA engineers. Drove the crash-free rate from 98% to 99.99%, shipped Phase 1 of mDL and verifiable credentials, and architected the Kotlin Multiplatform shared core.",
+  },
+  {
+    when: "Mar 2019 – Apr 2020",
+    title: "Mobile Engineer",
+    org: "GetSwift",
+    desc: "Maintained and shipped iOS and Android apps for a delivery scheduling, route-optimization, and payments platform. Drove the iOS migration from Objective-C to Swift and the Android migration from Java to Kotlin. Owned App Store and Play Store submissions and rejection resolution. Localized the iOS app for international markets, including right-to-left layout via AutoLayout. Picked up server-side C# / .NET to support mobile feature work.",
+  },
+  {
+    when: "Jan 2017 – Mar 2019",
+    title: "Senior iOS Developer",
+    org: "Verizon (via Matlen Silver)",
+    desc: "Shipped on the prepaid product line of the My Verizon iOS app, on a 10-engineer iOS team. Led the UI rebrand and redesigned the dashboard, login, and onboarding flows. Mentored junior iOS engineers on Swift conventions. Executed the Swift 3 → Swift 4 migration, integrated Face ID, and adapted layouts for the iPhone X notch. Tuned NSOperation performance — reworked, cancelled, and grouped operations to cut wasted work.",
+  },
+  {
+    when: "2012 – 2016",
+    title: "Earlier roles",
+    org: "Project Roots · Soft Solutions · Eurisko",
+    desc: "Project Roots (D.C., 2016): JavaFX desktop app, SQL persistence, SMTP newsletter pipeline. Soft Solutions (Lebanon, 2013–2015): SQL queries, stored procedures, and DB objects for line-of-business apps. Eurisko (Lebanon, 2012–2013): BlackBerry and Android apps with REST/SOAP integration via XML/JSON parsers.",
+  },
+];
+
+const education = {
+  when: "2010",
+  title: "B.E., Computer & Communication Engineering",
+  org: "Notre Dame University · Zouk Mosbeh, Lebanon",
+};
+---
+
+<Base
+  title="Experience"
+  description="Roles, dates, and what shipped — from State of Colorado OIT back to early-career engineering."
+>
+  <section class="wrap hero">
+    <span class="eyebrow">Experience</span>
+    <h1>Roles &amp; dates</h1>
+    <p class="lede" style="margin-top: 1.25rem;">
+      The compact version. The work pages have detail; the resume has more.
+    </p>
+  </section>
+
+  <section class="wrap section">
+    <ol class="timeline" aria-label="Roles">
+      {
+        roles.map((r) => (
+          <li class="role">
+            <div class="role__when">{r.when}</div>
+            <div>
+              <div class="role__title">{r.title}</div>
+              <div class="role__org">{r.org}</div>
+              <p class="role__desc">{r.desc}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="wrap section">
+    <span class="eyebrow">Education</span>
+    <ol class="timeline">
+      <li class="role">
+        <div class="role__when">{education.when}</div>
+        <div>
+          <div class="role__title">{education.title}</div>
+          <div class="role__org">{education.org}</div>
+        </div>
+      </li>
+    </ol>
+  </section>
+</Base>
