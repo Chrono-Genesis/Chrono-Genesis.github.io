@@ -18,6 +18,25 @@ const featuredWork = [
     body: "Started the Kotlin Multiplatform layer where duplication was beginning to cost more than coordination: business logic, packaged for iOS and Android through Azure, with local overrides that keep daily development practical.",
   },
 ];
+
+const goodFits = [
+  {
+    title: "Fractional mobile lead",
+    body: "Useful when a team needs senior direction across iOS and Android, but still needs the person setting direction to understand the code.",
+  },
+  {
+    title: "Identity and credential flows",
+    body: "OAuth, proofing, liveness, secure storage, redirects, vendor SDKs, and the recovery states that decide whether users trust the flow.",
+  },
+  {
+    title: "Modernization without a freeze",
+    body: "Moving toward SwiftUI, Jetpack Compose, Kotlin, and shared business logic while roadmap work keeps shipping.",
+  },
+  {
+    title: "Release and developer tooling",
+    body: "CI/CD, fastlane, Azure DevOps, release gates, and internal tools that make build, QA, and rollout work less dependent on tribal memory.",
+  },
+];
 ---
 
 <Base
@@ -34,7 +53,8 @@ const featuredWork = [
         credentials, release discipline, and old code that still has people depending on it.
         At Colorado OIT, I lead iOS and Android architecture for
         <a href="https://mycolorado.gov" rel="noopener">myColorado</a>, the State of Colorado's
-        official citizen app.
+        official citizen app for digital driver's licenses, vehicle registration, licenses,
+        health records, and other state services.
       </p>
 
       <p class="hero__lede">
@@ -52,6 +72,10 @@ const featuredWork = [
         <div>
           <dt>Based</dt>
           <dd>Greater Denver, CO · Remote</dd>
+        </div>
+        <div>
+          <dt>Core</dt>
+          <dd>Swift · Kotlin · Python</dd>
         </div>
         <div>
           <dt>Reach</dt>
@@ -109,5 +133,25 @@ const featuredWork = [
       Apple Wallet ID integrations as field notes. Standards are moving quickly, and the
       cheapest mistake to fix is the one you avoid before it becomes part of the app's shape.
     </p>
+  </section>
+
+  <section class="wrap section section--panel">
+    <span class="eyebrow">Good fits</span>
+    <p class="lede" style="margin-bottom: 1.5rem;">
+      The Gun.io version is simple: mobile engineer, solutions architect, Swift, Kotlin,
+      Python. The more useful version is where I tend to help most.
+    </p>
+    <ul class="work-list">
+      {
+        goodFits.map((fit) => (
+          <li>
+            <article class="work">
+              <h2 class="work__title">{fit.title}</h2>
+              <p class="work__body">{fit.body}</p>
+            </article>
+          </li>
+        ))
+      }
+    </ul>
   </section>
 </Base>
