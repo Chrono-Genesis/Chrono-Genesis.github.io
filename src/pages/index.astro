@@ -5,7 +5,7 @@ const featuredWork = [
   {
     title: "Mobile driver's license, from standard to store release",
     year: "2024–2025",
-    body: "Led the mobile side of Colorado's mDL work: identity proofing, liveness, issuance, presentation, secure state, and all the small recovery paths that make a standards-heavy flow feel like one product.",
+    body: "Led the mobile side of Colorado's mDL work: identity proofing, liveness, issuance, presentation, secure state, and recovery after redirects or app restarts.",
   },
   {
     title: "Crash-free user rate from 98% to 99.99%",
@@ -15,53 +15,52 @@ const featuredWork = [
   {
     title: "Shared mobile core without a rewrite pause",
     year: "2025–",
-    body: "Started the Kotlin Multiplatform layer where duplication was beginning to cost more than coordination: business logic, packaged for iOS and Android through Azure, with local overrides that keep daily development practical.",
+    body: "Started the Kotlin Multiplatform layer for business rules shared by both apps. iOS consumes an XCFramework; Android consumes a Maven AAR; both are packaged through Azure.",
   },
 ];
 
-const goodFits = [
+const availableFor = [
   {
-    title: "Fractional mobile lead",
-    body: "Useful when a team needs senior direction across iOS and Android, but still needs the person setting direction to understand the code.",
+    title: "Lead a small mobile team",
+    body: "Set architecture, review work, keep iOS and Android aligned, and still write code.",
   },
   {
     title: "Identity and credential flows",
-    body: "OAuth, proofing, liveness, secure storage, redirects, vendor SDKs, and the recovery states that decide whether users trust the flow.",
+    body: "OAuth, proofing, liveness, secure storage, redirects, vendor SDKs, and clear error states.",
   },
   {
-    title: "Modernization without a freeze",
-    body: "Moving toward SwiftUI, Jetpack Compose, Kotlin, and shared business logic while roadmap work keeps shipping.",
+    title: "Modernize an existing app",
+    body: "Move screens and shared code toward SwiftUI, Jetpack Compose, Kotlin, or KMP while features keep shipping.",
   },
   {
     title: "Release and developer tooling",
-    body: "CI/CD, fastlane, Azure DevOps, release gates, and internal tools that make build, QA, and rollout work less dependent on tribal memory.",
+    body: "Build pipelines, fastlane, Azure DevOps, release gates, and internal tools for developers and QA.",
   },
 ];
 ---
 
 <Base
   title="Marc Kayrouz"
-  description="Marc Kayrouz builds citizen-scale mobile systems: digital identity, crash-free release gates, native architecture, and steady modernization across iOS and Android."
+  description="Marc Kayrouz builds iOS and Android systems for digital identity, mobile credentials, release reliability, and app modernization."
 >
   <section class="wrap hero">
     <div class="hero__copy">
       <h1 class="hero__name">Marc Kayrouz</h1>
-      <p class="hero__role">Mobile architecture for apps people have to trust.</p>
+      <p class="hero__role">iOS and Android architecture for public-service apps.</p>
 
       <p class="hero__lede">
-        I build the parts of mobile apps that need to be calm under pressure: identity,
-        credentials, release discipline, and old code that still has people depending on it.
         At Colorado OIT, I lead iOS and Android architecture for
         <a href="https://mycolorado.gov" rel="noopener">myColorado</a>, the State of Colorado's
         official citizen app for digital driver's licenses, vehicle registration, licenses,
-        health records, and other state services.
+        health records, and other state services. Most of my work is in identity, credentials,
+        release reliability, and older app code that still has to keep moving.
       </p>
 
       <p class="hero__lede">
         The app is not small: about 2M downloads, 610k monthly active users, and 4.8 stars
         across 144,000+ ratings. The mobile team is small: three developers and three QA
         engineers. I stay close to the code, mentor the iOS and Android developers beside me,
-        and cross into AWS Lambda or legacy PHP when the work refuses to stay neatly mobile.
+        and cross into AWS Lambda or legacy PHP when a mobile feature depends on it.
       </p>
 
       <dl class="hero__meta">
@@ -123,27 +122,27 @@ const goodFits = [
   <section class="wrap section">
     <span class="eyebrow">How I work</span>
     <p>
-      I am most useful where product pressure and platform risk are in the same room. I like
-      small PRs, plain architecture, named owners, written decisions, and migration plans that
-      survive normal sprint pressure. My default question is: will this make the next change
-      easier to understand, test, and recover from?
+      On a small team, process has to earn its place. I prefer small PRs, named owners,
+      written decisions, and release checks that happen before a rollout reaches everyone.
+      Before I add a dependency or a new pattern, I want to know who will maintain it six
+      months from now.
     </p>
     <p>
       For mobile ID work, I also watch adjacent rollouts like CA DMV Wallet, LA Wallet, and
-      Apple Wallet ID integrations as field notes. Standards are moving quickly, and the
-      cheapest mistake to fix is the one you avoid before it becomes part of the app's shape.
+      Apple Wallet ID integrations. Standards are moving quickly; I would rather change a
+      design on paper than migrate the wrong primitive after release.
     </p>
   </section>
 
   <section class="wrap section section--panel">
-    <span class="eyebrow">Good fits</span>
+    <span class="eyebrow">Available for</span>
     <p class="lede" style="margin-bottom: 1.5rem;">
-      The Gun.io version is simple: mobile engineer, solutions architect, Swift, Kotlin,
-      Python. The more useful version is where I tend to help most.
+      Contract and freelance work where the mobile app is already important, already in
+      production, or about to take on identity or release risk.
     </p>
     <ul class="work-list">
       {
-        goodFits.map((fit) => (
+        availableFor.map((fit) => (
           <li>
             <article class="work">
               <h2 class="work__title">{fit.title}</h2>

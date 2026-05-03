@@ -1,7 +1,7 @@
 ---
-title: "Release gates should be boring enough to use"
+title: "Release gates should be easy to use"
 date: 2026-05-01
-summary: "A mobile release gate earns its keep when it helps tired people make the right rollout decision at the right moment."
+summary: "A mobile release gate should help the team decide whether to widen, hold, or investigate a rollout."
 ---
 
 Mobile reliability work can get theatrical fast. Dashboards multiply, thresholds become
@@ -17,11 +17,11 @@ That is not the whole reliability program. It is the minimum bar for deciding wh
 release deserves more traffic.
 
 For mobile teams, the gate also needs to respect phased rollout mechanics. A release can look
-clean at 1 percent and change shape at 25 percent. The useful habit is not "check once before
-shipping." It is "check at each traffic step, with the same questions, in the same place."
+clean at 1 percent and change shape at 25 percent. I do not want one check before shipping; I
+want the same check at each traffic step.
 
 The most important part is ownership. A dashboard without named owners becomes wallpaper. A
 crash with an owner, a reproduction note, a suspected area, and a decision about rollout is
 operational work.
 
-Good release gates are boring on purpose. They should make the right decision easier when everyone is tired.
+The gate should be short enough to use during a busy sprint review.

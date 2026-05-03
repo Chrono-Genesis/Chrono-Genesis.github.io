@@ -1,7 +1,7 @@
 ---
-title: "Mobile identity work rewards boring architecture"
+title: "Mobile identity work needs plain architecture"
 date: 2026-04-18
-summary: "Credential flows, OAuth, liveness checks, and secure storage are already complicated. The app architecture around them should stay intentionally plain."
+summary: "Credential flows, OAuth, liveness checks, and secure storage are complicated enough without clever app architecture around them."
 ---
 
 Mobile identity projects have enough moving parts before the app adds any drama.
@@ -10,21 +10,21 @@ There may be OAuth and PKCE, identity proofing, biometric liveness, credential i
 credential presentation, secure storage, session refresh, vendor SDKs, deep links, web
 redirects, and backend calls that all need to agree about state.
 
-That kind of system punishes clever app architecture.
+That kind of system is easier to maintain when the app boundaries are plain.
 
-The safest shape is usually explicit boundaries:
+The boundaries I want are explicit:
 
 - A small authentication surface that owns tokens and refresh behavior.
 - A credential surface that owns issuance, storage, and presentation state.
 - A vendor integration layer that keeps SDK details away from screens.
 - UI flows that can resume after redirects, interruptions, and app restarts.
 
-The details matter more than the diagram. If a user backgrounds the app during identity
-proofing, what state is recoverable? If a token refresh fails while a credential flow is
-mid-step, who decides what the user sees? If a vendor SDK changes an error format, how far does
-that leak?
+The diagram does not answer the questions that show up in production. If a user backgrounds
+the app during identity proofing, what state is recoverable? If a token refresh fails while a
+credential flow is mid-step, who decides what the user sees? If a vendor SDK changes an error
+format, how far does that leak?
 
-Those questions are not glamorous, but they are where trust is built.
+Those questions decide whether the flow can recover cleanly.
 
-For identity work, boring architecture is not a lack of ambition. It is how the app stays
-understandable when the standards, vendors, and product requirements are all moving at once.
+For identity work, I want code that is easy to trace when standards, vendors, and product
+requirements are all moving at once.

@@ -5,7 +5,7 @@ const work = [
   {
     title: "Mobile driver's license and verifiable credentials",
     year: "2024–present",
-    body: "Led the mobile implementation for Phase 1 of Colorado's mobile driver's license work: issuance and presentation of an ISO/IEC 18013-5 mDL, plus a reusable verifiable-credential path. The app side had to make PingOne IAM, ID Dataweb, FaceTec, and SpruceKit behave like one coherent flow, including recovery around redirects, proofing, and credential state. I also contributed to the law-enforcement Portal app used to accept credentials at traffic stops. Phase 2 is now in production.",
+    body: "Led the mobile implementation for Phase 1 of Colorado's mobile driver's license work: issuance and presentation of an ISO/IEC 18013-5 mDL, plus a reusable verifiable-credential path. The app integrates PingOne IAM, ID Dataweb, FaceTec, and SpruceKit, including recovery around redirects, proofing, and credential state. I also contributed to the law-enforcement Portal app used to accept credentials at traffic stops. Phase 2 is now in production.",
     tags: [
       "ISO/IEC 18013-5",
       "OpenID4VC",
@@ -18,7 +18,7 @@ const work = [
   {
     title: "Crash-free user rate from 98% to 99.99%",
     year: "2022–2024",
-    body: "Moved crash work out of end-of-sprint guesswork and into a release gate the team can actually keep. At each rollout step, Crashlytics answers the same questions: is the rate holding, did this build create a top issue, who owns the regression, and do we widen or hold? The result was crash-free users rising from 98% to 99.99%, plus shared evidence for support when login or session issues appear.",
+    body: "Moved crash work out of end-of-sprint guesswork and into a release gate the team uses during rollout. At each traffic step, Crashlytics answers the same questions: is the rate holding, did this build create a top issue, who owns the regression, and do we widen or hold? The result was crash-free users rising from 98% to 99.99%, plus shared evidence for support when login or session issues appear.",
     tags: ["Firebase Crashlytics", "Release gating", "Sprint review"],
   },
   {
@@ -36,19 +36,19 @@ const work = [
   {
     title: "iOS network-surface catalog",
     year: "2025",
-    body: "Mapped the iOS network surface so the team could see the app it actually had, not the app everyone remembered. The catalog covers about 95 endpoints, request shapes, Codable response models, and a reverse index from call site to endpoint. The useful part was the cleanup it exposed: duplicate authorize calls, token refresh outside the shared helper, parallel insurance-upload routes, and dead legacy functions.",
+    body: "Mapped the iOS network surface so the team could see the app it had in production. The catalog covers about 95 endpoints, request shapes, Codable response models, and a reverse index from call site to endpoint. It exposed duplicate authorize calls, token refresh outside the shared helper, parallel insurance-upload routes, and dead legacy functions.",
     tags: ["iOS", "API documentation", "Codable", "Reverse index"],
   },
   {
     title: "UIKit → SwiftUI and XML → Jetpack Compose, in production",
     year: "2022–present",
-    body: "Modernization in a government app cannot be a heroic rewrite. I helped set the rule we could keep: new UI uses SwiftUI or Compose by default, older screens move when adjacent work makes the cost honest, and migration work yields when production issues need the sprint. That is how UIKit, Android XML, SwiftUI, and Compose can overlap without turning every feature into an architecture debate.",
+    body: "Helped set a migration rule the team could keep: new UI uses SwiftUI or Compose by default, older screens move when nearby feature work makes the cost reasonable, and production issues take priority when a sprint is tight. UIKit, Android XML, SwiftUI, and Compose can overlap if the boundaries stay clear.",
     tags: ["SwiftUI", "Jetpack Compose", "UIKit", "Android XML"],
   },
   {
     title: "Mobile CI/CD and developer tooling",
     year: "2020–present",
-    body: "A quieter part of the work, but one that changes the week-to-week feel of a team. I have built and maintained mobile build, release, deployment, and packaging pipelines across Azure DevOps, fastlane, Swift Package Manager, Maven, and app-store workflows. The goal is simple: make developers and QA faster without making one person the release bottleneck.",
+    body: "Built and maintained mobile build, release, deployment, and packaging pipelines across Azure DevOps, fastlane, Swift Package Manager, Maven, and app-store workflows. The work includes scripts, release gates, and handoff points for QA so releases do not depend on one person remembering every step.",
     tags: ["Azure DevOps", "CI/CD", "fastlane", "Developer tooling", "QA workflows"],
   },
 ];
@@ -63,9 +63,9 @@ const work = [
       <span class="eyebrow">Selected work</span>
       <h1>Work</h1>
       <p class="lede" style="margin-top: 1.25rem;">
-        A few pieces from myColorado where the interesting part was not the technology name.
-        It was making careful systems survive deadlines, app stores, vendors, real users, and
-        the daily mechanics of a small team.
+        A few pieces from myColorado. The common thread is mobile work with real rollout
+        constraints: app stores, vendors, QA, support, and people using the app while the
+        next version is already underway.
       </p>
     </div>
 
@@ -73,7 +73,7 @@ const work = [
       <span class="hero__panel-title">Themes</span>
       <ul class="hero__panel-list">
         <li>Identity flows that can recover cleanly</li>
-        <li>Reliability habits people actually use</li>
+        <li>Release checks tied to rollout decisions</li>
         <li>Two native platforms, one product standard</li>
         <li>Build and release tooling that keeps teams moving</li>
       </ul>
