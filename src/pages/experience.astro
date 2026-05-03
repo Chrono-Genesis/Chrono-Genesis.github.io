@@ -40,14 +40,25 @@ const education = {
   description="Roles, dates, and what shipped — from State of Colorado OIT back to early-career engineering."
 >
   <section class="wrap hero">
-    <span class="eyebrow">Experience</span>
-    <h1>Roles &amp; dates</h1>
-    <p class="lede" style="margin-top: 1.25rem;">
-      The compact version. The work pages have detail; the resume has more.
-    </p>
+    <div class="hero__copy">
+      <span class="eyebrow">Experience</span>
+      <h1>Roles &amp; dates</h1>
+      <p class="lede" style="margin-top: 1.25rem;">
+        The compact version. The work pages have detail; the resume has more.
+      </p>
+    </div>
+
+    <aside class="hero__panel" aria-label="Experience summary">
+      <span class="hero__panel-title">Snapshot</span>
+      <ul class="hero__panel-list">
+        <li>15+ years across native mobile and backend-adjacent systems</li>
+        <li>Principal ownership of iOS and Android architecture</li>
+        <li>Hands-on technical leadership with production accountability</li>
+      </ul>
+    </aside>
   </section>
 
-  <section class="wrap section">
+  <section class="wrap section section--panel">
     <ol class="timeline" aria-label="Roles">
       {
         roles.map((r) => (

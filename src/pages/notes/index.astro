@@ -19,15 +19,26 @@ const fmt = new Intl.DateTimeFormat("en-US", {
   description="Short writing on mobile architecture, mDL and verifiable credentials, framework migrations, and the long-running work behind a state app."
 >
   <section class="wrap hero">
-    <span class="eyebrow">Notes</span>
-    <h1>Notes</h1>
-    <p class="lede" style="margin-top: 1.25rem;">
-      Short writing on mobile architecture, mDL and verifiable credentials, framework migrations,
-      and the long-running work behind a state app.
-    </p>
+    <div class="hero__copy">
+      <span class="eyebrow">Notes</span>
+      <h1>Notes</h1>
+      <p class="lede" style="margin-top: 1.25rem;">
+        Short writing on mobile architecture, mDL and verifiable credentials, framework migrations,
+        and the long-running work behind a state app.
+      </p>
+    </div>
+
+    <aside class="hero__panel" aria-label="Writing topics">
+      <span class="hero__panel-title">Topics</span>
+      <ul class="hero__panel-list">
+        <li>Architecture notes from production mobile systems</li>
+        <li>Identity standards, tradeoffs, and implementation details</li>
+        <li>Modernization work that keeps teams moving</li>
+      </ul>
+    </aside>
   </section>
 
-  <section class="wrap section">
+  <section class="wrap section section--panel">
     {
       notes.length === 0 ? (
         <div class="empty-state">No posts yet. Soon.</div>

@@ -3,16 +3,27 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
-  <div class="wrap site-footer__row">
-    <span>&copy; {year} Marc Kayrouz</span>
-    <span>
+  <div class="wrap site-footer__grid">
+    <div>
+      <span class="site-footer__label">Contact</span>
+      <p>
+        Available for mobile architecture consulting, iOS/Android modernization,
+        and selective technical leadership work.
+      </p>
+    </div>
+
+    <nav class="site-footer__links" aria-label="Contact links">
+      <a href="mailto:marc_kayrouz@protonmail.com">Email</a>
       <a
         href="https://www.linkedin.com/in/marc-kayrouz-7a953735"
         rel="me noopener"
         target="_blank">LinkedIn</a
       >
-      <span aria-hidden="true"> · </span>
-      <a href="mailto:marc_kayrouz@protonmail.com">Email</a>
-    </span>
+    </nav>
+  </div>
+
+  <div class="wrap site-footer__row">
+    <span>&copy; {year} Marc Kayrouz</span>
+    <span>Principal mobile engineer · iOS · Android · Architecture</span>
   </div>
 </footer>

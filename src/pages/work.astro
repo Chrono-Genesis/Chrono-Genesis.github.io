@@ -53,15 +53,26 @@ const work = [
   description="Selected mobile engineering work — mDL and verifiable credentials, crash reduction, Kotlin Multiplatform, framework migrations."
 >
   <section class="wrap hero">
-    <span class="eyebrow">Selected work</span>
-    <h1>Work</h1>
-    <p class="lede" style="margin-top: 1.25rem;">
-      A short list, not a complete one. Most of this is on myColorado, the State of Colorado's
-      official app.
-    </p>
+    <div class="hero__copy">
+      <span class="eyebrow">Selected work</span>
+      <h1>Work</h1>
+      <p class="lede" style="margin-top: 1.25rem;">
+        A short list, not a complete one. Most of this is on myColorado, the State of Colorado's
+        official app.
+      </p>
+    </div>
+
+    <aside class="hero__panel" aria-label="Work themes">
+      <span class="hero__panel-title">Themes</span>
+      <ul class="hero__panel-list">
+        <li>Digital identity and mobile credential standards</li>
+        <li>Reliability practices that survive production traffic</li>
+        <li>Shared architecture for two native mobile platforms</li>
+      </ul>
+    </aside>
   </section>
 
-  <section class="wrap section">
+  <section class="wrap section section--panel">
     <ul class="work-list">
       {
         work.map((w) => (

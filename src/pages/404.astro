@@ -7,13 +7,24 @@ import Base from "../layouts/Base.astro";
   description="The page you're looking for isn't here."
 >
   <section class="wrap hero">
-    <span class="eyebrow">404</span>
-    <h1>Not here.</h1>
-    <p class="lede" style="margin-top: 1.25rem;">
-      That page doesn't exist, or it moved. Try the
-      <a href="/">home page</a>, or jump to
-      <a href="/work">work</a> or
-      <a href="/experience">experience</a>.
-    </p>
+    <div class="hero__copy">
+      <span class="eyebrow">404</span>
+      <h1>Not here.</h1>
+      <p class="lede" style="margin-top: 1.25rem;">
+        That page doesn't exist, or it moved. Try the
+        <a href="/">home page</a>, or jump to
+        <a href="/work">work</a> or
+        <a href="/experience">experience</a>.
+      </p>
+    </div>
+
+    <aside class="hero__panel" aria-label="Useful links">
+      <span class="hero__panel-title">Useful links</span>
+      <ul class="hero__panel-list">
+        <li><a href="/">About Marc Kayrouz</a></li>
+        <li><a href="/work">Selected work</a></li>
+        <li><a href="/experience">Experience</a></li>
+      </ul>
+    </aside>
   </section>
 </Base>

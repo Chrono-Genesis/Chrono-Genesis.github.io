@@ -25,41 +25,53 @@ const featuredWork = [
   description="Principal mobile engineer. iOS and Android architecture for myColorado, the State of Colorado's official app."
 >
   <section class="wrap hero">
-    <h1 class="hero__name">Marc Kayrouz</h1>
-    <p class="hero__role">Principal mobile engineer.</p>
+    <div class="hero__copy">
+      <h1 class="hero__name">Marc Kayrouz</h1>
+      <p class="hero__role">Principal mobile engineer.</p>
 
-    <p class="hero__lede">
-      I lead iOS and Android architecture for <a href="https://mycolorado.gov" rel="noopener">myColorado</a>,
-      the State of Colorado's official citizen app — about 2M downloads, 610k monthly active users,
-      4.8 stars across 144,000+ ratings. The current work covers mobile driver's licenses, verifiable
-      credentials, identity, and the long migrations underneath all of it.
-    </p>
+      <p class="hero__lede">
+        I lead iOS and Android architecture for <a href="https://mycolorado.gov" rel="noopener">myColorado</a>,
+        the State of Colorado's official citizen app — about 2M downloads, 610k monthly active users,
+        4.8 stars across 144,000+ ratings. The current work covers mobile driver's licenses, verifiable
+        credentials, identity, and the long migrations underneath all of it.
+      </p>
 
-    <p class="hero__lede">
-      Three-developer mobile team. Three QA engineers. I cover both platform leads, mentor the iOS and
-      Android devs alongside me, and pick up AWS Lambda or legacy PHP when a task crosses the line.
-    </p>
+      <p class="hero__lede">
+        Three-developer mobile team. Three QA engineers. I cover both platform leads, mentor the iOS and
+        Android devs alongside me, and pick up AWS Lambda or legacy PHP when a task crosses the line.
+      </p>
 
-    <dl class="hero__meta">
-      <div>
-        <dt>Role</dt>
-        <dd>Principal Developer · State of Colorado · OIT</dd>
-      </div>
-      <div>
-        <dt>Based</dt>
-        <dd>Greater Denver, CO · Remote</dd>
-      </div>
-      <div>
-        <dt>Reach</dt>
-        <dd>
-          <a href="mailto:marc_kayrouz@protonmail.com">Email</a>,
-          <a href="https://www.linkedin.com/in/marc-kayrouz-7a953735" rel="me noopener" target="_blank">LinkedIn</a>
-        </dd>
-      </div>
-    </dl>
+      <dl class="hero__meta">
+        <div>
+          <dt>Role</dt>
+          <dd>Principal Developer · State of Colorado · OIT</dd>
+        </div>
+        <div>
+          <dt>Based</dt>
+          <dd>Greater Denver, CO · Remote</dd>
+        </div>
+        <div>
+          <dt>Reach</dt>
+          <dd>
+            <a href="mailto:marc_kayrouz@protonmail.com">Email</a>,
+            <a href="https://www.linkedin.com/in/marc-kayrouz-7a953735" rel="me noopener" target="_blank">LinkedIn</a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <aside class="hero__panel" aria-label="Current focus">
+      <span class="hero__panel-title">Current focus</span>
+      <ul class="hero__panel-list">
+        <li>Mobile driver's license and verifiable credential rollout</li>
+        <li>Crash-free release gates and production reliability</li>
+        <li>Kotlin Multiplatform shared core across iOS and Android</li>
+        <li>Incremental SwiftUI and Jetpack Compose modernization</li>
+      </ul>
+    </aside>
   </section>
 
-  <section class="wrap section">
+  <section class="wrap section section--panel">
     <span class="eyebrow">Selected work</span>
     <ul class="work-list">
       {
