@@ -11,29 +11,31 @@ const fmt = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
   month: "short",
   day: "numeric",
+  timeZone: "UTC",
 });
 ---
 
 <Base
   title="Notes"
-  description="Short writing on mobile architecture, mDL and verifiable credentials, framework migrations, and the long-running work behind a state app."
+  description="Short notes from Marc Kayrouz on reliable mobile systems, digital identity, release gates, modernization, and architecture under production pressure."
 >
   <section class="wrap hero">
     <div class="hero__copy">
       <span class="eyebrow">Notes</span>
       <h1>Notes</h1>
       <p class="lede" style="margin-top: 1.25rem;">
-        Short writing on mobile architecture, mDL and verifiable credentials, framework migrations,
-        and the long-running work behind a state app.
+        The decisions behind the neat one-line metrics: how to modernize without pausing
+        roadmap work, how release gates survive pressure, and why identity systems usually
+        need less cleverness than patience.
       </p>
     </div>
 
     <aside class="hero__panel" aria-label="Writing topics">
       <span class="hero__panel-title">Topics</span>
       <ul class="hero__panel-list">
-        <li>Architecture notes from production mobile systems</li>
-        <li>Identity standards, tradeoffs, and implementation details</li>
-        <li>Modernization work that keeps teams moving</li>
+        <li>Mobile architecture under production pressure</li>
+        <li>Digital identity details that affect user trust</li>
+        <li>Migrations, release gates, and small habits that compound</li>
       </ul>
     </aside>
   </section>

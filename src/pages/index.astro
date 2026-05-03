@@ -3,42 +3,45 @@ import Base from "../layouts/Base.astro";
 
 const featuredWork = [
   {
-    title: "Mobile driver's license, Phase 1",
+    title: "Mobile driver's license, from standard to store release",
     year: "2024–2025",
-    body: "Shipped issuance and presentation of mDL credentials under ISO/IEC 18013-5, integrated with PingOne IAM, ID Dataweb identity proofing, FaceTec biometric liveness, and the SpruceKit credentials runtime. Phase 2 rollout is live and ongoing.",
+    body: "Led the mobile side of Colorado's mDL work: identity proofing, liveness, issuance, presentation, secure state, and all the small recovery paths that make a standards-heavy flow feel like one product.",
   },
   {
     title: "Crash-free user rate from 98% to 99.99%",
     year: "2022–2024",
-    body: "Built a release-gating policy and a structured triage protocol on top of Firebase Crashlytics. Sprint reviews catch regressions before phased rollout. The same dashboards now drive customer-support root-cause work.",
+    body: "Moved reliability from a metric people checked after release into a gate the team uses while traffic is still ramping. Crashlytics now helps decide when to widen, hold, or dig in.",
   },
   {
-    title: "Kotlin Multiplatform shared core",
+    title: "Shared mobile core without a rewrite pause",
     year: "2025–",
-    body: "Phase 1 scaffold for a shared business-logic core across iOS and Android. XCFramework distributed via Azure Blob Storage, Maven AAR via Azure Artifacts, two-stage Azure Pipelines (Linux for JVM/AAR, macOS for XCFramework).",
+    body: "Started the Kotlin Multiplatform layer where duplication was beginning to cost more than coordination: business logic, packaged for iOS and Android through Azure, with local overrides that keep daily development practical.",
   },
 ];
 ---
 
 <Base
   title="Marc Kayrouz"
-  description="Principal mobile engineer. iOS and Android architecture for myColorado, the State of Colorado's official app."
+  description="Marc Kayrouz builds citizen-scale mobile systems: digital identity, crash-free release gates, native architecture, and steady modernization across iOS and Android."
 >
   <section class="wrap hero">
     <div class="hero__copy">
       <h1 class="hero__name">Marc Kayrouz</h1>
-      <p class="hero__role">Principal mobile engineer.</p>
+      <p class="hero__role">Mobile architecture for apps people have to trust.</p>
 
       <p class="hero__lede">
-        I lead iOS and Android architecture for <a href="https://mycolorado.gov" rel="noopener">myColorado</a>,
-        the State of Colorado's official citizen app — about 2M downloads, 610k monthly active users,
-        4.8 stars across 144,000+ ratings. The current work covers mobile driver's licenses, verifiable
-        credentials, identity, and the long migrations underneath all of it.
+        I build the parts of mobile apps that need to be calm under pressure: identity,
+        credentials, release discipline, and old code that still has people depending on it.
+        At Colorado OIT, I lead iOS and Android architecture for
+        <a href="https://mycolorado.gov" rel="noopener">myColorado</a>, the State of Colorado's
+        official citizen app.
       </p>
 
       <p class="hero__lede">
-        Three-developer mobile team. Three QA engineers. I cover both platform leads, mentor the iOS and
-        Android devs alongside me, and pick up AWS Lambda or legacy PHP when a task crosses the line.
+        The app is not small: about 2M downloads, 610k monthly active users, and 4.8 stars
+        across 144,000+ ratings. The mobile team is small: three developers and three QA
+        engineers. I stay close to the code, mentor the iOS and Android developers beside me,
+        and cross into AWS Lambda or legacy PHP when the work refuses to stay neatly mobile.
       </p>
 
       <dl class="hero__meta">
@@ -63,10 +66,10 @@ const featuredWork = [
     <aside class="hero__panel" aria-label="Current focus">
       <span class="hero__panel-title">Current focus</span>
       <ul class="hero__panel-list">
-        <li>Mobile driver's license and verifiable credential rollout</li>
-        <li>Crash-free release gates and production reliability</li>
-        <li>Kotlin Multiplatform shared core across iOS and Android</li>
-        <li>Incremental SwiftUI and Jetpack Compose modernization</li>
+        <li>Mobile driver's license and verifiable credentials in production</li>
+        <li>Release gates that catch trouble while rollout can still change</li>
+        <li>Shared mobile logic that keeps two native apps from drifting apart</li>
+        <li>SwiftUI and Jetpack Compose migration without freezing product work</li>
       </ul>
     </aside>
   </section>
@@ -89,22 +92,22 @@ const featuredWork = [
       }
     </ul>
     <p style="margin-top: 2.5rem;">
-      <a href="/work">More work →</a>
+      <a href="/work">Read the work notes →</a>
     </p>
   </section>
 
   <section class="wrap section">
     <span class="eyebrow">How I work</span>
     <p>
-      Two-week sprints. The product manager owns prioritization; I add to the backlog. Migration work
-      slips first when something has to slip; features second, crashes almost never. Net of that, I
-      try to keep the team's options open: smaller PRs, fewer dependencies, and documentation that
-      survives whoever wrote it.
+      I am most useful where product pressure and platform risk are in the same room. I like
+      small PRs, plain architecture, named owners, written decisions, and migration plans that
+      survive normal sprint pressure. My default question is: will this make the next change
+      easier to understand, test, and recover from?
     </p>
     <p>
-      I keep an eye on adjacent state mobile-ID rollouts (CA DMV Wallet, LA Wallet, the Apple Wallet
-      ID-in-Wallet integrations) as input rather than competition. The standards space around mDL and
-      verifiable credentials is moving quickly and I don't want to ship the wrong primitives.
+      For mobile ID work, I also watch adjacent rollouts like CA DMV Wallet, LA Wallet, and
+      Apple Wallet ID integrations as field notes. Standards are moving quickly, and the
+      cheapest mistake to fix is the one you avoid before it becomes part of the app's shape.
     </p>
   </section>
 </Base>

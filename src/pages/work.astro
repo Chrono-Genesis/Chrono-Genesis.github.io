@@ -3,9 +3,9 @@ import Base from "../layouts/Base.astro";
 
 const work = [
   {
-    title: "Mobile driver's license & verifiable credentials",
+    title: "Mobile driver's license and verifiable credentials",
     year: "2024–present",
-    body: "Phase 1 shipped: issuance and presentation of an ISO/IEC 18013-5 mobile driver's license, alongside a generic verifiable-credential issuance flow. Integrated with PingOne IAM (OAuth 2.0 / PKCE), ID Dataweb identity proofing, FaceTec biometric liveness, and the SpruceKit credentials runtime. Also contributed to the law-enforcement Portal app that accepts these credentials at traffic stops. Phase 2 rollout is in production.",
+    body: "Led the mobile implementation for Phase 1 of Colorado's mobile driver's license work: issuance and presentation of an ISO/IEC 18013-5 mDL, plus a reusable verifiable-credential path. The app side had to make PingOne IAM, ID Dataweb, FaceTec, and SpruceKit behave like one coherent flow, including recovery around redirects, proofing, and credential state. I also contributed to the law-enforcement Portal app used to accept credentials at traffic stops. Phase 2 is now in production.",
     tags: [
       "ISO/IEC 18013-5",
       "OpenID4VC",
@@ -18,13 +18,13 @@ const work = [
   {
     title: "Crash-free user rate from 98% to 99.99%",
     year: "2022–2024",
-    body: "A release-gating policy and a structured triage protocol on top of Firebase Crashlytics. Each sprint review walks the dashboards, every regression has a named owner, and phased rollouts hold until the rate clears the gate. The same surface is now where the team and customer support meet to investigate login and session issues.",
+    body: "Moved crash work out of end-of-sprint guesswork and into a release gate the team can actually keep. At each rollout step, Crashlytics answers the same questions: is the rate holding, did this build create a top issue, who owns the regression, and do we widen or hold? The result was crash-free users rising from 98% to 99.99%, plus shared evidence for support when login or session issues appear.",
     tags: ["Firebase Crashlytics", "Release gating", "Sprint review"],
   },
   {
     title: "Kotlin Multiplatform shared core",
     year: "2025–present",
-    body: "Phase 1 scaffold for shared business logic across iOS and Android. XCFramework distributed via Azure Blob Storage with a SAS URL (consumed by Swift Package Manager); Maven AAR distributed via an Azure Artifacts feed. CI is two-stage Azure Pipelines: Linux for lint, JVM tests, and AAR; macOS for XCFramework. Local dev uses sibling-folder overrides — Xcode drag-in for SPM, Gradle composite build for Android.",
+    body: "Started the shared-core track at the point where duplication was becoming more expensive than coordination. Phase 1 packages business logic for both native apps: XCFramework via Azure Blob Storage and Swift Package Manager, AAR via Azure Artifacts and Maven, with CI split between Linux and macOS. Local development still stays practical through Xcode drag-in overrides and Gradle composite builds.",
     tags: [
       "Kotlin Multiplatform",
       "XCFramework",
@@ -36,13 +36,13 @@ const work = [
   {
     title: "iOS network-surface catalog",
     year: "2025",
-    body: "A team-internal source of truth for the iOS app's network surface: ~95 endpoints with request shapes, Codable response models, and a reverse index from call site to endpoint. Surfaced four cleanup candidates in the process — duplicate authorize calls, a refresh-token path outside the shared helper, dual insurance-upload routes, and dead legacy functions.",
+    body: "Mapped the iOS network surface so the team could see the app it actually had, not the app everyone remembered. The catalog covers about 95 endpoints, request shapes, Codable response models, and a reverse index from call site to endpoint. The useful part was the cleanup it exposed: duplicate authorize calls, token refresh outside the shared helper, parallel insurance-upload routes, and dead legacy functions.",
     tags: ["iOS", "API documentation", "Codable", "Reverse index"],
   },
   {
     title: "UIKit → SwiftUI and XML → Jetpack Compose, in production",
     year: "2022–present",
-    body: "Two framework migrations on a citizen-facing app, sequenced so they don't block feature delivery. New UI lands in the new framework by default; old screens get rewritten when an adjacent change makes it cheap. Migration work is the first thing to slip when a sprint runs hot, which keeps the rule honest.",
+    body: "Modernization in a government app cannot be a heroic rewrite. I helped set the rule we could keep: new UI uses SwiftUI or Compose by default, older screens move when adjacent work makes the cost honest, and migration work yields when production issues need the sprint. That is how UIKit, Android XML, SwiftUI, and Compose can overlap without turning every feature into an architecture debate.",
     tags: ["SwiftUI", "Jetpack Compose", "UIKit", "Android XML"],
   },
 ];
@@ -50,24 +50,24 @@ const work = [
 
 <Base
   title="Work"
-  description="Selected mobile engineering work — mDL and verifiable credentials, crash reduction, Kotlin Multiplatform, framework migrations."
+  description="Selected work from Marc Kayrouz: mobile driver's license, verifiable credentials, release gates, Kotlin Multiplatform, and native app modernization."
 >
   <section class="wrap hero">
     <div class="hero__copy">
       <span class="eyebrow">Selected work</span>
       <h1>Work</h1>
       <p class="lede" style="margin-top: 1.25rem;">
-        A short list, not a complete one. Most of this is on myColorado, the State of Colorado's
-        official app.
+        A few pieces from myColorado where the interesting part was not the technology name.
+        It was making careful systems survive deadlines, app stores, vendors, and real users.
       </p>
     </div>
 
     <aside class="hero__panel" aria-label="Work themes">
       <span class="hero__panel-title">Themes</span>
       <ul class="hero__panel-list">
-        <li>Digital identity and mobile credential standards</li>
-        <li>Reliability practices that survive production traffic</li>
-        <li>Shared architecture for two native mobile platforms</li>
+        <li>Identity flows that can recover cleanly</li>
+        <li>Reliability habits people actually use</li>
+        <li>Two native platforms, one product standard</li>
       </ul>
     </aside>
   </section>
